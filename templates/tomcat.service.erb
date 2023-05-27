@@ -1,9 +1,27 @@
 [Unit]
 Description=Tomcat Service
+After=network.target
 
 [Service]
 Type=forking
-ExecStart=/etc/init.d/<%= @scriptName %>
+
+User=<%= @tomcatUser %>
+Group=<%= @tomcatGroup %>
+
+Environment="JAVA_HOME=/usr/lib/jvm/java-openjdk"
+Environment="JAVA_OPTS=-Djava.security.egd=file:///dev/urandom"
+Environment="CATALINA_BASE=<%= @catalinaHome %>"
+Environment="CATALINA_HOME=<%= @catalinaHome %>"
+#Environment="CATALINA_PID=/opt/tomcat/temp/tomcat.pid"
+Environment="CATALINA_OPTS=-Xms512M -Xmx1024M -server -XX:+UseParallelGC"
+
+#ExecStart=/etc/init.d/<%= @scriptName %> start
+#ExecStop=/etc/init.d/<%= @scriptName %> stop
+ExecStart=<%= @catalinaHome %>/bin/startup.sh
+ExecStop=<%= @catalinaHome %>/bin/shutdown.sh
+
+RestartSec=10
+Restart=always
 
 [Install]
 WantedBy=multi-user.target
