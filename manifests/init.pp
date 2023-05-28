@@ -16,8 +16,8 @@ class vs_java (
         require => [ Class['vs_java::openjdk'] ],
     }
     
-    class { 'maven::maven':
-        version => "${mavenVersion}",
+    class { '::vs_java::maven':
+        mavenVersion    => $mavenVersion,
     }
     
     class { '::vs_java::tomcat':
