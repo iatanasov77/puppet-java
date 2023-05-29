@@ -1,6 +1,4 @@
 class vs_java (
-    $jdkVersion         = '17',
-    $mavenVersion       = '3.9.2',
     Hash $tomcatConfig  = {},
 ) {
     ################################################################################################################
@@ -12,12 +10,12 @@ class vs_java (
     })
     
     Exec{ 'Set Java Default':
-        command => "/opt/vs_devenv/set_default_java.sh ${jdkVersion}",
+        command => "/opt/vs_devenv/set_default_java.sh ${tomcatConfig['jdkVersion']}",
         require => [ Class['vs_java::openjdk'] ],
     }
     
     class { '::vs_java::maven':
-        mavenVersion    => $mavenVersion,
+        mavenVersion    => $tomcatConfig['mavenVersion'],
     }
     
     class { '::vs_java::tomcat':

@@ -1,7 +1,7 @@
 #!/usr/bin/php
 <?php
 
-$mavenSetttings = "/opt/apache-maven-3.9.2/conf/settings.xml";
+$mavenSetttings = "/opt/apache-maven-<%= @mavenVersion %>/conf/settings.xml";
 
 // Open and parse the XML file
 $xml = simplexml_load_file( $mavenSetttings );

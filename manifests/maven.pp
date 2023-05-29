@@ -9,7 +9,7 @@ class vs_java::maven (
         owner   => 'root',
         group   => 'root',
         mode    => '0777',
-        source  => 'puppet:///modules/vs_java/maven-add-server.php',
+        content => template( 'vs_java/maven-add-server.php.erb' ),
     } ->
     Exec { 'Maven Tomcat Server Settings':
         command => "/usr/bin/php /opt/vs_devenv/maven-add-server.php",
