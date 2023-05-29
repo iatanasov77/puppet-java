@@ -5,7 +5,7 @@ class vs_java (
     # Add Class if Not Declared Already
     # https://github.com/puppetlabs/puppetlabs-stdlib/blob/main/lib/puppet/parser/functions/ensure_resource.rb
     ################################################################################################################
-    ensure_resource( 'class', 'vs_java::openjdk', {
+    ensure_resource( 'class', 'vs_core::packages::openjdk', {
         jdkVersion  => "${tomcatConfig['jdkVersion']}",
     })
     
