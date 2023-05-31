@@ -5,13 +5,13 @@ class vs_java (
     # Add Class if Not Declared Already
     # https://github.com/puppetlabs/puppetlabs-stdlib/blob/main/lib/puppet/parser/functions/ensure_resource.rb
     ################################################################################################################
-    ensure_resource( 'class', 'vs_core::packages::openjdk', {
+    ensure_resource( 'vs_core::openjdk', "openjdk-${tomcatConfig['jdkVersion']}", {
         jdkVersion  => "${tomcatConfig['jdkVersion']}",
     })
     
-    Exec{ 'Set Java Default':
+    Exec{ "Set Java Default ${tomcatConfig['jdkVersion']}":
         command => "/opt/vs_devenv/set_default_java.sh ${tomcatConfig['jdkVersion']}",
-        require => [ Class['vs_java::openjdk'] ],
+        require => Package["java-${tomcatConfig['jdkVersion']}-openjdk"],
     }
     
     class { '::vs_java::maven':
