@@ -1,59 +1,59 @@
 {
-  "name": "vankosoft/vs_java",
-  "version": "0.1.0",
-  "author": "Ivan I. Atanasov",
-  "summary": "Installs, configures, and manages the openjdk, java frameworks/libraries, tomcat container instances etc.",
-  "license": "Apache-2.0",
-  "source": "https://github.com/iatanasov77/puppet-java.git",
-  "project_page": "https://github.com/iatanasov77/puppet-java",
-  "dependencies": [
-    {
-      "name": "puppetlabs/stdlib",
-      "version_requirement": ">= 4.6.0 < 9.0.0"
-    },
-    {
-      "name": "puppetlabs/java",
-      "version_requirement": ">= 10.0.0"
-    },
-    {
-      "name": "puppetlabs/tomcat",
-      "version_requirement": ">= 7.0.0"
-    },
-    {
-      "name": "maestrodev/maven",
-      "version_requirement": ">= 1.4.1"
-    },
-    {
-      "name": "vankosoft/vs_devenv",
-      "version_requirement": ">= 0.1.0"
-    },
-    {
-      "name": "vankosoft/vs_lamp",
-      "version_requirement": ">= 0.1.0"
-    }
-  ],
-  "operatingsystem_support": [
-    {
-      "operatingsystem": "RedHat",
-      "operatingsystemrelease": [
-        "7",
-        "8",
-        "9"
-      ]
-    },
-    {
-      "operatingsystem": "CentOS",
-      "operatingsystemrelease": [
-        "7",
-        "8"
-      ]
-    }
-  ],
-  "requirements": [
-    {
-      "name": "puppet",
-      "version_requirement": ">= 7.0.0 < 9.0.0"
-    }
-  ],
-  "description": "Install OpenJdk and Other Java Developement Tools"
+    "name": "vankosoft/vs_java",
+    "version": "0.1.0",
+    "author": "Ivan I. Atanasov",
+    "summary": "Installs, configures, and manages the openjdk, java frameworks/libraries, tomcat container instances etc.",
+    "license": "Apache-2.0",
+    "source": "https://github.com/iatanasov77/puppet-java.git",
+    "project_page": "https://github.com/iatanasov77/puppet-java",
+    "dependencies": [
+        {
+            "name": "puppetlabs/stdlib",
+            "version_requirement": ">= 4.6.0 < 9.0.0"
+        },
+        {
+            "name": "puppetlabs/java",
+            "version_requirement": ">= 10.0.0"
+        },
+        {
+            "name": "puppetlabs/tomcat",
+            "version_requirement": ">= 7.0.0"
+        },
+        {
+            "name": "maestrodev/maven",
+            "version_requirement": ">= 1.4.1"
+        },
+        {
+            "name": "vankosoft/vs_devenv",
+            "version_requirement": ">= 0.1.0"
+        },
+        {
+            "name": "vankosoft/vs_lamp",
+            "version_requirement": ">= 0.1.0"
+        }
+    ],
+    "operatingsystem_support": [
+        {
+            "operatingsystem": "RedHat",
+            "operatingsystemrelease": [
+                "7",
+                "8",
+                "9"
+            ]
+        },
+        {
+            "operatingsystem": "CentOS",
+            "operatingsystemrelease": [
+                "7",
+                "8"
+            ]
+        }
+    ],
+    "requirements": [
+        {
+            "name": "puppet",
+            "version_requirement": ">= 8.0.0 < 9.0.0"
+        }
+    ],
+    "description": "Install OpenJdk and Other Java Developement Tools"
 }
